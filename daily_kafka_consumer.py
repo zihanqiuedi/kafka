@@ -8,7 +8,7 @@ import pandas as pd
 from pyspark.sql.functions import col, lag, stddev , mean
 from pyspark.sql.window import Window
 
-# 创建 Kafka 消费者
+# Creat Kafka Consumer
 consumer = KafkaConsumer(
     'my_topic',  # Consumer topic name
     bootstrap_servers=['localhost:9092'],  # Kafka ip
@@ -60,7 +60,7 @@ tickers = pd.read_csv(url)
 sp500_list = tickers['Symbol'].to_list()
 sp500_list = sorted(sp500_list)
 
-# 配置MySQL连接信息
+# Setup MySQL
 url = "jdbc:mysql://sh-cynosdbmysql-grp-ce02sdme.sql.tencentcdb.com:20905/eco_data"
 
 
